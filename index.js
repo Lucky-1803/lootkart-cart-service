@@ -1,10 +1,10 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 app.use(express.json())
 const routes = require('./routes/cart.route')
 const { connectRedis } = require('./config/redis')
 const runConsumer = require('./consumer/cart.consumer')
-require('dotenv').config()
 PORT = process.env.PORT
 
 app.use("/cart",routes)
